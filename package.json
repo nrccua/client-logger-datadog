@@ -1,0 +1,55 @@
+{
+  "author": "Adam Weeden <adam.weeden@encoura.org>",
+  "bugs": {
+    "url": "https://github.com/nrccua/client-logger-datadog/issues"
+  },
+  "dependencies": {
+    "@datadog/browser-logs": "3.8.0",
+    "lodash": "4.17.21",
+    "moment": "2.29.1",
+    "typescript": "4.5.2"
+  },
+  "description": "A logger for front-ends to write logs to DataDog",
+  "devDependencies": {
+    "@encoura/eslint-config": "git+https://github.com/nrccua/eslint-config.git",
+    "@types/jest": "27.0.3",
+    "@types/lodash": "4.14.177",
+    "husky": "7.0.4",
+    "jest": "27.3.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.4.1",
+    "standard-version": "9.3.2",
+    "ts-jest": "27.0.7"
+  },
+  "homepage": "https://github.com/nrccua/client-logger-datadog#readme",
+  "keywords": [
+    "logger",
+    "datadog",
+    "client"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "client-logger-datadog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrccua/client-logger-datadog.git"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc $(find lib | grep .ts | grep -v test.ts) --outDir dist --esModuleInterop --declaration --target es5",
+    "build:review": "npm-run-all test build",
+    "clean": "rm -rf dist",
+    "clean:full": "npm run clean && rm -rf node_modules",
+    "postinstall": "npm run build",
+    "prepare": "husky install && git config --local push.followTags true",
+    "prettier": "prettier --write './**/*.js' './**/*.ts'",
+    "test": "npm-run-all test:**",
+    "test:lint:js": "eslint . --ext .js --fix --quiet",
+    "test:lint:md": "markdownlint README.md --config node_modules/@encoura/eslint-config/markdownlint.config.json",
+    "test:lint:ts": "eslint . --ext .ts,.tsx --fix",
+    "test:prettier": "npm run prettier",
+    "test:types": "tsc --project ./tsconfig.json",
+    "test:unit": "NODE_ENV=test jest --silent --coverage",
+    "update:version": "standard-version"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./lib",
+    "esModuleInterop": true,
+    "incremental": false,
+    "outDir": "./dist",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "extends": "./node_modules/@encoura/eslint-config/tsconfig.json",
+  "include": [
+    "./**/*"
+  ],
+  "target": "es2019",
+  "ts-node": {
+    "transpileOnly": false,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}
