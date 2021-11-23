@@ -28,7 +28,7 @@
     "client"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
   "name": "client-logger-datadog",
   "repository": {
     "type": "git",
