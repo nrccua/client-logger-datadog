@@ -1,23 +1,32 @@
 /* eslint-disable max-classes-per-file */
+// 2 classes were defined in this file to avoid circular dependency
+// LoggerCore imports LoggerInstance which also requires LoggerCore
+import moment from 'moment';
+
 import { ILoggerMiddleware } from '../types';
 
 export class LoggerInstance {
   constructor(private loggerCore: LoggerCore, private moduleName: string) {}
 
+  private get prefix(): string {
+    const date = moment();
+    return `(${date.utc().format('YYYY-MM-DDTHH:mm:ss.SSS')}) [${this.moduleName}]`;
+  }
+
   public debug(message: string, ...args: unknown[]): void {
-    this.loggerCore.debug(this.moduleName, message, ...args);
+    this.loggerCore.debug(this.moduleName, `${this.prefix} ${message}`, ...args);
   }
 
   public info(message: string, ...args: unknown[]): void {
-    this.loggerCore.info(this.moduleName, message, ...args);
+    this.loggerCore.info(this.moduleName, `${this.prefix} ${message}`, ...args);
   }
 
   public warn(message: string, ...args: unknown[]): void {
-    this.loggerCore.warn(this.moduleName, message, ...args);
+    this.loggerCore.warn(this.moduleName, `${this.prefix} ${message}`, ...args);
   }
 
-  public error(message: string, ...args: unknown[]): void {
-    this.loggerCore.error(this.moduleName, message, ...args);
+  public error<T extends Error>(message: string | T, ...args: unknown[]): void {
+    this.loggerCore.error(this.moduleName, `${this.prefix} ${String(message)}`, ...args);
   }
 }
 
