@@ -1,5 +1,5 @@
 import { datadogLogs, Logger } from '@datadog/browser-logs';
-import { isString, isUndefined } from 'lodash';
+import { isUndefined } from 'lodash';
 
 import { ILoggerMiddleware, LogLevel, LogLevelStrings } from '../types';
 
@@ -31,33 +31,34 @@ const defaultDatadogLoggerConfig = {
 export default class DatadogLogger implements ILoggerMiddleware {
   private remoteLogger?: Logger;
 
-  constructor(private service: string, private env: string, private datadogToken?: string, private config: IDatadogLoggerConfig = defaultDatadogLoggerConfig) {
-    // // override possible missing config keys with default values
-    const configToUse: IDatadogLoggerConfig = { ...defaultDatadogLoggerConfig, ...config };
+  private config: IDatadogLoggerConfig;
 
-    if (!isUndefined(this.datadogToken) && this.isRemoteEnvironment() && this.validateDDParams()) {
+  constructor(
+    private service: string,
+    private env: string,
+    private datadogToken: string | undefined,
+    private customConfig: Partial<IDatadogLoggerConfig> = {},
+  ) {
+    // // override possible missing config keys with default values
+    this.config = { ...defaultDatadogLoggerConfig, ...this.customConfig };
+
+    if (!isUndefined(this.datadogToken) && this.isRemoteEnvironment()) {
       datadogLogs.init({
         clientToken: this.datadogToken,
         env: this.env,
         sampleRate: 100,
-        site: configToUse.site,
+        site: this.config.site,
       });
 
       const remoteLogger = datadogLogs.logger;
       remoteLogger?.addContext('service', this.service);
 
-      Object.keys(configToUse.extraContexts).forEach(param => {
-        this.remoteLogger?.addContext(param, configToUse.extraContexts[param]);
+      Object.keys(this.config.extraContexts).forEach(param => {
+        remoteLogger?.addContext(param, this.config.extraContexts[param]);
       });
 
       this.remoteLogger = remoteLogger;
     }
-
-    this.config = configToUse;
-  }
-
-  private validateDDParams(): boolean {
-    return Boolean(isString(this.env) && isString(this.config.site) && isString(this.datadogToken));
   }
 
   private isRemoteEnvironment(): boolean {
