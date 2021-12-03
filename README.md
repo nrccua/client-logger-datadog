@@ -55,7 +55,8 @@ a `customIgnoredEnvironments` array with environments to be ignored.
 The remote logs will only be sent if they are equal or above the configured
 log level. i.e a log level of 1 (info) will send info, warn and error logs.
 By default, the logger will only send remote logs of
-the error level (value of 3).
+the error level (value of 3). A log level of silent (value of 5)
+will silence all logs.
 
 The middleware can be customized by an additional config parameter
 in the constructor, such as:

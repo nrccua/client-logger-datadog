@@ -18,6 +18,12 @@ export class LoggerCore {
     });
   }
 
+  public log(moduleName: string, message: string, ...args: unknown[]): void {
+    this.middlewares.forEach(middleware => {
+      middleware.onLog('log', moduleName, message, ...args);
+    });
+  }
+
   public info(moduleName: string, message: string, ...args: unknown[]): void {
     this.middlewares.forEach(middleware => {
       middleware.onLog('info', moduleName, message, ...args);

@@ -18,6 +18,10 @@ export default class LoggerInstance {
     this.loggerCore.info(this.moduleName, `${this.prefix} ${message}`, ...args);
   }
 
+  public log(message: string, ...args: unknown[]): void {
+    this.loggerCore.log(this.moduleName, `${this.prefix} ${message}`, ...args);
+  }
+
   public warn(message: string, ...args: unknown[]): void {
     this.loggerCore.warn(this.moduleName, `${this.prefix} ${message}`, ...args);
   }

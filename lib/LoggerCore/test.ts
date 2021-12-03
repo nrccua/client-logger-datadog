@@ -33,6 +33,12 @@ describe('Console logger middleware', (): void => {
       expect(middleware.onLog).toHaveBeenLastCalledWith('debug', moduleName, dummyMessage);
     });
 
+    loggerCore.log(moduleName, dummyMessage);
+
+    dummyMiddlewares.forEach(middleware => {
+      expect(middleware.onLog).toHaveBeenLastCalledWith('log', moduleName, dummyMessage);
+    });
+
     loggerCore.info(moduleName, dummyMessage);
 
     dummyMiddlewares.forEach(middleware => {
@@ -62,6 +68,12 @@ describe('Console logger middleware', (): void => {
 
     dummyMiddlewares.forEach(middleware => {
       expect(middleware.onLog).toHaveBeenLastCalledWith('debug', diffModuleName, expectedMessageFormat);
+    });
+
+    logger.log(dummyMessage);
+
+    dummyMiddlewares.forEach(middleware => {
+      expect(middleware.onLog).toHaveBeenLastCalledWith('log', diffModuleName, expectedMessageFormat);
     });
 
     logger.info(dummyMessage);
