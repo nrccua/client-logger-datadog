@@ -6,7 +6,9 @@ import { ILoggerMiddleware, LogLevelStrings } from '../types';
 export default class ConsoleLogger implements ILoggerMiddleware {
   // eslint-disable-next-line class-methods-use-this
   public onLog(level: LogLevelStrings, message: string, ...args: unknown[]): void {
-    // eslint-disable-next-line no-console
-    console[level](message, args);
+    if (level !== 'silent') {
+      // eslint-disable-next-line no-console
+      console[level](message, args);
+    }
   }
 }

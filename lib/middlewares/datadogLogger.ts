@@ -72,7 +72,7 @@ export default class DatadogLogger implements ILoggerMiddleware {
   public onLog(level: LogLevelStrings, message: string, ...args: unknown[]): void {
     const logLevelValue = LogLevel[level];
 
-    if (this.remoteLogger && this.config.logLevel <= logLevelValue) {
+    if (level !== 'silent' && this.remoteLogger && this.config.logLevel <= logLevelValue) {
       this.remoteLogger[level](message, args);
     }
   }
