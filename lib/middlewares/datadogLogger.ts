@@ -46,7 +46,9 @@ export default class DatadogLogger implements ILoggerMiddleware {
       datadogLogs.init({
         clientToken: this.datadogToken,
         env: this.env,
+        forwardErrorsToLogs: false,
         sampleRate: 100,
+        service,
         site: this.config.site,
       });
 

@@ -38,7 +38,9 @@ describe('Datadog logger middleware', (): void => {
     const expectedInitCall = {
       clientToken: datadogKey,
       env: devEnv,
+      forwardErrorsToLogs: false,
       sampleRate: 100,
+      service,
       site: 'datadoghq.com',
     };
 
