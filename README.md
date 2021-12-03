@@ -1,7 +1,9 @@
 # Client Logger Datadog
 
-A library that creates a logger with support for middlewares that will be called when a message is logged.
-The library also exports some already built middlewares, such as DatadogLogger that connects with datadog and a ConsoleLogger middleware.
+A library that creates a logger with support for middlewares that will be
+called when a message is logged.
+The library also exports some already built middlewares, such as
+DatadogLogger that connects with datadog and a ConsoleLogger middleware.
 
 ## Features
 
@@ -14,6 +16,7 @@ The library also exports some already built middlewares, such as DatadogLogger t
 Import the `Logger` from the library and attach desired middlewares.
 
 You can customize certain configurations by passing a config object
+
 ```TypeScript
 
 // logger.ts
@@ -42,14 +45,20 @@ try {
 
 ```
 
-# DatadogLogger Middleware
-The middleware creates a connection with datadog if the datadog configuration parameters are valid, and if `env` is any of `local` `local-dev` or `test`.
-If there are additional environments that you want to ignore, you can specify a `customIgnoredEnvironments` array with environments to be ignored.
+## DatadogLogger Middleware
 
-The remote logs will only be sent if they are equal or above the configured log level. i.e a log level of 1 (info) will send info, warn and error logs.
-By default, the logger will only send remote logs of the error level (value of 3).
+The middleware creates a connection with datadog if the datadog configuration
+parameters are valid, and if `env` is not `local`, `local-dev` or `test`.
+If there are additional environments that you want to ignore, you can specify
+a `customIgnoredEnvironments` array with environments to be ignored.
 
-The middleware can be customized by an additional config parameter in the constructor, such as:
+The remote logs will only be sent if they are equal or above the configured
+log level. i.e a log level of 1 (info) will send info, warn and error logs.
+By default, the logger will only send remote logs of
+the error level (value of 3).
+
+The middleware can be customized by an additional config parameter
+in the constructor, such as:
 
 ```TypeScript
 
@@ -72,16 +81,22 @@ const loggerConfig = {
 
 const datadogLogger = new DatadogLogger('my-application', NODE_ENV, datadogKey, loggerConfig);
 ```
-# ConsoleLogger Middleware
-The library exports a middleware that will call the browser console when a log is received. If you want your logs to also
-go to the current client's browser console, you can use this middleware.
-# Defining your own middleware
-You can create your own middleware by extending the ILoggerMiddleware interface.
+
+## ConsoleLogger Middleware
+
+The library exports a middleware that will call the browser console
+when a log is received. If you want your logs to also
+go to the current client's browser console,
+you can use this middleware.
+
+## Defining your own middleware
+
+You can create your own middleware by implementing the ILoggerMiddleware interface.
 
 ```TypeScript
   import { ILoggerMiddleware, Logger } from 'client-logger-datadog';
 
-  class MyLoggerMiddleware extends ILoggerMiddleware {
+  class MyLoggerMiddleware implements ILoggerMiddleware {
     private remoteLogger;
 
     constructor(token: string) {
@@ -103,6 +118,7 @@ You can create your own middleware by extending the ILoggerMiddleware interface.
 
   Logger.addMiddleware(myMiddleware);
 ```
+
 ## Releasing
 
 Checking in the dist folder is not necessary as it will be built upon
