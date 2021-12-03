@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/nrccua/client-logger-datadog/compare/1.0.4...1.0.5) (2021-12-03)
+
+
+### Changes
+
+* [E4E-35]: Adding silent and log to core and instance ([58dedbd](https://github.com/nrccua/client-logger-datadog/commit/58dedbdeb07033866c4ef590eb9ce0177b2648a6))
+* [E4E-35]: Updating version and changelog ([3b96478](https://github.com/nrccua/client-logger-datadog/commit/3b96478f5182005b04b6f465762f3cfc526a46fc))
+
 ### [1.0.4](https://github.com/nrccua/client-logger-datadog/compare/1.0.3...1.0.4) (2021-12-03)
 
 
