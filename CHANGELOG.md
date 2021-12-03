@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/nrccua/client-logger-datadog/compare/1.0.3...1.0.4) (2021-12-03)
+
+
+### Changes
+
+* [E4E-35]: Revertin NPM scripts and adding silent and log ([fb4d822](https://github.com/nrccua/client-logger-datadog/commit/fb4d8223bc6cc977c4f0aa2f73bf70fa2c5eb704))
+
 ### [1.0.2](https://github.com/nrccua/client-logger-datadog/compare/1.0.1...1.0.2) (2021-12-03)
 
 
