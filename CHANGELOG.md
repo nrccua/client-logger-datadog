@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/nrccua/client-logger-datadog/compare/1.0.1...1.0.2) (2021-12-03)
+
+
+### Changes
+
+* [E4E-35]: Adding more DD init configs ([7b5ae96](https://github.com/nrccua/client-logger-datadog/commit/7b5ae962830d8002666b6c552fb5ef0a3c2b8eb4))
+* [E4E-35]: Finished tests and lint fixes ([4e72ca8](https://github.com/nrccua/client-logger-datadog/commit/4e72ca8a588fdeeddcb501ae55f4488be1c6dea5))
+* [E4E-35]: Moved logger instance to spearate file, + DD logger UTs ([af15794](https://github.com/nrccua/client-logger-datadog/commit/af157940a93a7e67f6eff01f1be6ceb907974717))
+* [E4E-35]: Added prefix to messages, documentation and UT ([496e4df](https://github.com/nrccua/client-logger-datadog/commit/496e4df858f1bcbf5e4caa041c6a13f41143190e))
+* [E4E-35]: Created Logger and middlewares for logger ([765c686](https://github.com/nrccua/client-logger-datadog/commit/765c686cf4d5f90f1d34cfa243acdfe1dcdd2fdf))
+* 1.0.1 ([9c7d791](https://github.com/nrccua/client-logger-datadog/commit/9c7d7917926abb73cf4a67876e1016f0c89bea00))
+
 ### [1.0.1](https://github.com/nrccua/client-logger-datadog/compare/1.0.0...1.0.1) (2021-11-23)
 
 
