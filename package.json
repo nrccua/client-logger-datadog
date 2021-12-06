@@ -4,6 +4,7 @@
     "url": "https://github.com/nrccua/client-logger-datadog/issues"
   },
   "dependencies": {
+    "@datadog/browser-core": "^3.8.0",
     "@datadog/browser-logs": "3.8.0",
     "lodash": "4.17.21",
     "moment": "2.29.1",
