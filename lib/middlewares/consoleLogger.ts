@@ -9,7 +9,7 @@ export default class ConsoleLogger implements ILoggerMiddleware {
     // console has no 'silent' method
     if (level !== 'silent') {
       // eslint-disable-next-line no-console
-      console[level](message, args);
+      console[level](message, ...args);
     }
   }
 }

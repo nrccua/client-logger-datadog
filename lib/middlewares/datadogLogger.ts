@@ -73,7 +73,7 @@ export default class DatadogLogger implements ILoggerMiddleware {
     const logLevelValue = LogLevel[level];
 
     if (level !== 'silent' && this.remoteLogger && this.config.logLevel <= logLevelValue) {
-      this.remoteLogger[level](message, args);
+      this.remoteLogger[level](message, { params: { ...args } });
     }
   }
 }
