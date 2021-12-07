@@ -3,6 +3,6 @@ import { Logger } from './LoggerCore';
 
 export * from './middlewares';
 
-export type { ILoggerMiddleware, LogLevel } from './types';
+export type { ILoggerMiddleware, LogLevel, ILogger } from './types';
 
 export { Logger };

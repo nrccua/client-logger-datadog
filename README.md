@@ -131,7 +131,7 @@ After making any changes and merging them to main, please do the following:
 * Verify the `CHANGELOG.md` generated changes
 * Commit, push, and merge to main.
 * Create a new
-  [release](https://github.com/nrccua/apollo-rest-utils/releases/new) using
+  [release](https://github.com/nrccua/client-logger-datadog/releases/new) using
   the tag generated in the previous steps
 * Use the `Auto-generate release notes` button to generate the release notes,
   and add any context you may deem necessary.
