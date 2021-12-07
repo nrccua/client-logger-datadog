@@ -1,8 +1,10 @@
 import moment from 'moment';
 
+import { ILogger } from '../types';
+
 import type { LoggerCore } from '../LoggerCore';
 
-export default class LoggerInstance {
+export default class LoggerInstance implements ILogger {
   constructor(private loggerCore: LoggerCore, private moduleName: string) {}
 
   private get prefix(): string {
