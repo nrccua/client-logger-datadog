@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/nrccua/client-logger-datadog/compare/1.0.5...1.0.6) (2021-12-07)
+
+
+### Changes
+
+* [E4E-35]: Fixing dependecy version and library exports ([e7f0ce8](https://github.com/nrccua/client-logger-datadog/commit/e7f0ce8204a73c204b34adca71078d81fcd1ace9))
+* [E4E-35]: Updating unit tests ([e4ea93f](https://github.com/nrccua/client-logger-datadog/commit/e4ea93fa0223a078f840dfcfc6fda6381f5d9a57))
+* [E4E-35]: Testing Context value ([8176876](https://github.com/nrccua/client-logger-datadog/commit/817687649668c7553fe453a098cbbe1048d31445))
+* [E4E-35]: Added context array to DD middleware ([43bc813](https://github.com/nrccua/client-logger-datadog/commit/43bc81304e24722d5c315d46724465423f2ef4ce))
+* [E4E-35]: Adjustments to console logging parameters and exports ([a6b9412](https://github.com/nrccua/client-logger-datadog/commit/a6b94122ceb56d99032ddb7e59fca9e78d607926))
+* [E4E-35]: Updating version and changelog ([f41e408](https://github.com/nrccua/client-logger-datadog/commit/f41e408b298ed933e057ac5beba9e3c610f798eb))
+
 ### [1.0.5](https://github.com/nrccua/client-logger-datadog/compare/1.0.4...1.0.5) (2021-12-03)
 
 
