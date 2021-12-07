@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/nrccua/client-logger-datadog/compare/1.0.6...1.0.7) (2021-12-07)
+
+
+### Changes
+
+* Merge pull request #3 from nrccua/E4E-35 ([9c342fc](https://github.com/nrccua/client-logger-datadog/commit/9c342fc9918dc26ee54eeacc63ff3eaf5d89f1c1)), closes [#3](https://github.com/nrccua/client-logger-datadog/issues/3)
+* [E4E-35]: Exporting ILogger ([866ad9d](https://github.com/nrccua/client-logger-datadog/commit/866ad9d84cd55c4822dddf5f1e2103550b90f2fd))
+* [E4E-35]: Updating version and changelog ([bc06212](https://github.com/nrccua/client-logger-datadog/commit/bc0621285a6de52bac4ebafb8e3c0f81b4153e81))
+* Merge pull request #2 from nrccua/E4E-35 ([1e738b5](https://github.com/nrccua/client-logger-datadog/commit/1e738b5b7eac15d79aca186beec7b06300ab191d)), closes [#2](https://github.com/nrccua/client-logger-datadog/issues/2)
+* Merge pull request #1 from nrccua/E4E-35 ([0f12a27](https://github.com/nrccua/client-logger-datadog/commit/0f12a276c0ec89d36ec5c0b9840cd95101702ccc)), closes [#1](https://github.com/nrccua/client-logger-datadog/issues/1)
+
 ### [1.0.6](https://github.com/nrccua/client-logger-datadog/compare/1.0.5...1.0.6) (2021-12-07)
 
 
