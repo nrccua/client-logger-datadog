@@ -4,7 +4,7 @@
     "url": "https://github.com/nrccua/client-logger-datadog/issues"
   },
   "dependencies": {
-    "@datadog/browser-core": "^3.8.0",
+    "@datadog/browser-core": "3.8.0",
     "@datadog/browser-logs": "3.8.0",
     "lodash": "4.17.21",
     "moment": "2.29.1",
@@ -36,7 +36,8 @@
     "url": "git+https://github.com/nrccua/client-logger-datadog.git"
   },
   "scripts": {
-    "build": "npm run clean && tsc $(find lib | grep .ts | grep -v test.ts) --outDir dist --esModuleInterop --declaration --target es5",
+    "build": "npm run clean && npm run build:dist",
+    "build:dist": "tsc $(find lib | grep .ts | grep -v test.ts) --outDir dist --esModuleInterop --declaration --target es5",
     "build:review": "npm-run-all test build",
     "clean": "rm -rf dist",
     "clean:full": "npm run clean && rm -rf node_modules",
