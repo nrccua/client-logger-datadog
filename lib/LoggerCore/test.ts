@@ -67,31 +67,31 @@ describe('Console logger middleware', (): void => {
     logger.debug(dummyMessage);
 
     dummyMiddlewares.forEach(middleware => {
-      expect(middleware.onLog).toHaveBeenLastCalledWith('debug', diffModuleName, expectedMessageFormat);
+      expect(middleware.onLog).toHaveBeenLastCalledWith('debug', expectedMessageFormat);
     });
 
     logger.log(dummyMessage);
 
     dummyMiddlewares.forEach(middleware => {
-      expect(middleware.onLog).toHaveBeenLastCalledWith('log', diffModuleName, expectedMessageFormat);
+      expect(middleware.onLog).toHaveBeenLastCalledWith('log', expectedMessageFormat);
     });
 
     logger.info(dummyMessage);
 
     dummyMiddlewares.forEach(middleware => {
-      expect(middleware.onLog).toHaveBeenLastCalledWith('info', diffModuleName, expectedMessageFormat);
+      expect(middleware.onLog).toHaveBeenLastCalledWith('info', expectedMessageFormat);
     });
 
     logger.warn(dummyMessage);
 
     dummyMiddlewares.forEach(middleware => {
-      expect(middleware.onLog).toHaveBeenLastCalledWith('warn', diffModuleName, expectedMessageFormat);
+      expect(middleware.onLog).toHaveBeenLastCalledWith('warn', expectedMessageFormat);
     });
 
     logger.error(dummyMessage);
 
     dummyMiddlewares.forEach(middleware => {
-      expect(middleware.onLog).toHaveBeenLastCalledWith('error', diffModuleName, expectedMessageFormat);
+      expect(middleware.onLog).toHaveBeenLastCalledWith('error', expectedMessageFormat);
     });
   });
 });

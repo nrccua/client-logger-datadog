@@ -11,22 +11,22 @@ export default class LoggerInstance {
   }
 
   public debug(message: string, ...args: unknown[]): void {
-    this.loggerCore.debug(this.moduleName, `${this.prefix} ${message}`, ...args);
+    this.loggerCore.debug(`${this.prefix} ${message}`, ...args);
   }
 
   public info(message: string, ...args: unknown[]): void {
-    this.loggerCore.info(this.moduleName, `${this.prefix} ${message}`, ...args);
+    this.loggerCore.info(`${this.prefix} ${message}`, ...args);
   }
 
   public log(message: string, ...args: unknown[]): void {
-    this.loggerCore.log(this.moduleName, `${this.prefix} ${message}`, ...args);
+    this.loggerCore.log(`${this.prefix} ${message}`, ...args);
   }
 
   public warn(message: string, ...args: unknown[]): void {
-    this.loggerCore.warn(this.moduleName, `${this.prefix} ${message}`, ...args);
+    this.loggerCore.warn(`${this.prefix} ${message}`, ...args);
   }
 
   public error<T extends Error>(message: string | T, ...args: unknown[]): void {
-    this.loggerCore.error(this.moduleName, `${this.prefix} ${String(message)}`, ...args);
+    this.loggerCore.error(`${this.prefix} ${String(message)}`, ...args);
   }
 }

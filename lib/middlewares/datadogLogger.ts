@@ -1,3 +1,4 @@
+import { Context } from '@datadog/browser-core';
 import { datadogLogs, Logger } from '@datadog/browser-logs';
 import { isUndefined } from 'lodash';
 
@@ -71,9 +72,10 @@ export default class DatadogLogger implements ILoggerMiddleware {
 
   public onLog(level: LogLevelStrings, message: string, ...args: unknown[]): void {
     const logLevelValue = LogLevel[level];
+    const params = args as unknown as Context;
 
     if (level !== 'silent' && this.remoteLogger && this.config.logLevel <= logLevelValue) {
-      this.remoteLogger[level](message, args);
+      this.remoteLogger[level](message, params);
     }
   }
 }

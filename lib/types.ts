@@ -10,5 +10,5 @@ export enum LogLevel {
 export type LogLevelStrings = keyof typeof LogLevel;
 
 export interface ILoggerMiddleware {
-  onLog(level: LogLevelStrings, moduleName: string, message: string, ...args: unknown[]): void;
+  onLog(level: LogLevelStrings, message: string, ...args: unknown[]): void;
 }

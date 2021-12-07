@@ -12,33 +12,33 @@ export class LoggerCore {
     return new LoggerInstance(this, moduleName);
   }
 
-  public debug(moduleName: string, message: string, ...args: unknown[]): void {
+  public debug(message: string, ...args: unknown[]): void {
     this.middlewares.forEach(middleware => {
-      middleware.onLog('debug', moduleName, message, ...args);
+      middleware.onLog('debug', message, ...args);
     });
   }
 
-  public log(moduleName: string, message: string, ...args: unknown[]): void {
+  public log(message: string, ...args: unknown[]): void {
     this.middlewares.forEach(middleware => {
-      middleware.onLog('log', moduleName, message, ...args);
+      middleware.onLog('log', message, ...args);
     });
   }
 
-  public info(moduleName: string, message: string, ...args: unknown[]): void {
+  public info(message: string, ...args: unknown[]): void {
     this.middlewares.forEach(middleware => {
-      middleware.onLog('info', moduleName, message, ...args);
+      middleware.onLog('info', message, ...args);
     });
   }
 
-  public warn(moduleName: string, message: string, ...args: unknown[]): void {
+  public warn(message: string, ...args: unknown[]): void {
     this.middlewares.forEach(middleware => {
-      middleware.onLog('warn', moduleName, message, ...args);
+      middleware.onLog('warn', message, ...args);
     });
   }
 
-  public error(moduleName: string, message: string, ...args: unknown[]): void {
+  public error(message: string, ...args: unknown[]): void {
     this.middlewares.forEach(middleware => {
-      middleware.onLog('error', moduleName, message, ...args);
+      middleware.onLog('error', message, ...args);
     });
   }
 }

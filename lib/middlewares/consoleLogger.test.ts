@@ -25,16 +25,16 @@ describe('Console logger middleware', (): void => {
   });
 
   it('calls the correct console method given the log level', () => {
-    consoleLoggerMiddleware.onLog('debug', dummyMessage);
-    expect(consoleStub.debug).toHaveBeenLastCalledWith(dummyMessage, []);
+    consoleLoggerMiddleware.onLog('debug', dummyMessage, 'some string value', { foo: 'bar' });
+    expect(consoleStub.debug).toHaveBeenLastCalledWith(dummyMessage, 'some string value', { foo: 'bar' });
 
     consoleLoggerMiddleware.onLog('error', dummyMessage);
-    expect(consoleStub.error).toHaveBeenLastCalledWith(dummyMessage, []);
+    expect(consoleStub.error).toHaveBeenLastCalledWith(dummyMessage);
 
-    consoleLoggerMiddleware.onLog('info', dummyMessage);
-    expect(consoleStub.info).toHaveBeenLastCalledWith(dummyMessage, []);
+    consoleLoggerMiddleware.onLog('info', dummyMessage, { userUid: 'uid' });
+    expect(consoleStub.info).toHaveBeenLastCalledWith(dummyMessage, { userUid: 'uid' });
 
     consoleLoggerMiddleware.onLog('warn', dummyMessage);
-    expect(consoleStub.warn).toHaveBeenLastCalledWith(dummyMessage, []);
+    expect(consoleStub.warn).toHaveBeenLastCalledWith(dummyMessage);
   });
 });
