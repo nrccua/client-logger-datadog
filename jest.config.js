@@ -15,6 +15,7 @@ module.exports = {
   maxWorkers: os.cpus().length / 2,
   preset: 'ts-jest',
   roots: ['<rootDir>/lib'],
+  snapshotSerializers: [],
   transform: {
     '^.+\\.ts$': [
       'ts-jest',
