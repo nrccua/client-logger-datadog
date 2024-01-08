@@ -12,16 +12,16 @@ module.exports = {
       statements: 100,
     },
   },
-  globals: {
-    'ts-jest': {
-      diagnostics: false,
-      tsconfig: './tsconfig.json',
-    },
-  },
   maxWorkers: os.cpus().length / 2,
   preset: 'ts-jest',
   roots: ['<rootDir>/lib'],
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': [
+      'ts-jest',
+      {
+        diagnostics: false,
+        tsconfig: './tsconfig.json',
+      },
+    ],
   },
 };
