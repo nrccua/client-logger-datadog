@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Label PRs
-        uses: TheCleric/pr-branch-labeler@v3
+        uses: nrccua/pr-branch-labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
